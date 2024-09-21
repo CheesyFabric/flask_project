@@ -6,7 +6,7 @@ pipeline {
             steps {
                 echo '拉取GitHub仓库代码'
                 // 拉取GitHub仓库代码
-                git url: 'https://github.com/your-user/your-repo.git', branch: 'main'
+                git url: 'https://github.com/CheesyFabric/flask_project.git', branch: 'main'
             }
         }
 
