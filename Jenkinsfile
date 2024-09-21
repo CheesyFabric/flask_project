@@ -12,9 +12,9 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo 'pip install -r requirements.txt 安装项目依赖'
+                echo '/bin/pip3 install -r requirements.txt 安装项目依赖'
                 // 安装项目依赖
-                sh 'pip install -r requirements.txt'
+                sh '/bin/pip3 install -r requirements.txt'
             }
         }
 
