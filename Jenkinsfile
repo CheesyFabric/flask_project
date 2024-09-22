@@ -10,11 +10,20 @@ pipeline {
             }
         }
 
+        stage('Setup Virtual Environment') {
+            echo 'Setup Virtual Environment'
+            steps {
+                // 创建虚拟环境
+                sh 'python3 -m venv venv'
+            }
+        }
+
+
         stage('Install Dependencies') {
             steps {
                 echo '/bin/pip3 install -r requirements.txt 安装项目依赖'
                 // 安装项目依赖
-                sh '/bin/pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/'
+                sh '. venv/bin/activate && /bin/pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/'
             }
         }
 
