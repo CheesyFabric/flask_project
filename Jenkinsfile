@@ -29,6 +29,10 @@ pipeline {
 
         stage('Build Docker Image') {
             steps {
+                echo '赋予 run.sh 可执行权限'
+                // 赋予脚本可执行权限
+                sh 'chmod +x ./run.sh'
+                
                 echo '构建Docker镜像'
                 // 构建Docker镜像
                 sh './run.sh'
