@@ -21,9 +21,9 @@ pipeline {
 
         stage('Install Dependencies') {
             steps {
-                echo '/bin/pip3 install -r requirements.txt 安装项目依赖'
-                // 安装项目依赖
-                sh '. venv/bin/activate && /bin/pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/'
+                echo '安装项目依赖'
+                // 激活虚拟环境并使用虚拟环境的 pip 来安装依赖
+                sh '. venv/bin/activate && pip install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/'
             }
         }
 
