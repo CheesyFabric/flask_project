@@ -11,8 +11,8 @@ pipeline {
         }
 
         stage('Setup Virtual Environment') {
-            echo 'Setup Virtual Environment'
             steps {
+                echo 'Setup Virtual Environment'
                 // 创建虚拟环境
                 sh 'python3 -m venv venv'
             }
