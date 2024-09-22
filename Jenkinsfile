@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo '/bin/pip3 install -r requirements.txt 安装项目依赖'
                 // 安装项目依赖
-                sh '/bin/pip3 install -r requirements.txt'
+                sh '/bin/pip3 install -r requirements.txt -i https://mirrors.aliyun.com/pypi/simple/'
             }
         }
 
