@@ -35,12 +35,16 @@ pipeline {
                 
                 echo '构建Docker镜像'
                 // 构建Docker镜像
-                sh './run.sh'
+                // sh './run.sh'
             }
         }
 
         stage('Run Tests') {
             steps {
+                echo '赋予 run-tests.sh 可执行权限'
+                // 赋予脚本可执行权限
+                sh 'chmod +x ./run-tests.sh'
+
                 echo '运行单元测试'
                 // 运行单元测试
                 sh './run-tests.sh'
